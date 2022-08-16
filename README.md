@@ -32,7 +32,7 @@ If you want to use this project locally on your device you will need the followi
 
   To get actions run ```npm install```
 
-  To get webpck action ``npm run buid``
+  To get webpck action ``npm run build``
 
   To get liveServer action ``npm start``
 

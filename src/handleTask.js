@@ -8,7 +8,7 @@ export default class Task {
   }
 }
 
-export const addTask = (description) => {
+const addTask = (description) => {
   const task = new Task(description, tasks.length + 1);
   const newTasks = [...tasks, task];
   localStorage.setItem('tasks', JSON.stringify(newTasks));
@@ -25,7 +25,7 @@ const removeTask = (index) => {
   document.location.reload();
 };
 
-export const removeAllChecked = () => {
+const removeAllChecked = () => {
   let updatedTasks = tasks.filter((task) => task.completed !== true);
   updatedTasks = updatedTasks.map((task, index) => {
     task.index = index + 1;
@@ -44,7 +44,7 @@ const updateTask = (index, inputEdit) => {
   document.location.reload();
 };
 
-export const editTask = (index) => {
+const editTask = (index) => {
   const task = tasks[index - 1];
   const element = document.getElementById(index);
   element.style.backgroundColor = 'rgb(244, 243, 243)';
@@ -67,3 +67,5 @@ export const editTask = (index) => {
 
   element.append(inputEdit, menuOk);
 };
+
+export { addTask, removeAllChecked, editTask };
